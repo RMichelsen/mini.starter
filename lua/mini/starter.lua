@@ -1,4 +1,4 @@
-/--- *mini.starter* Start screen
+--- *mini.starter* Start screen
 --- *MiniStarter*
 ---
 --- MIT License Copyright (c) 2021 Evgeni Chasnovski
