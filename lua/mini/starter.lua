@@ -993,10 +993,7 @@ H.default_header = function()
 end
 
 H.default_footer = [[
-Type query to filter items
-<BS> deletes latest character from query
-<Esc> resets current query
-<Down/Up>, <C-j/k> move current item
+<Down/Up>, <j/k> move current item
 <CR> executes action of current item
 <C-c> closes this buffer]]
 
@@ -1385,20 +1382,10 @@ H.apply_buffer_mappings = function(buf_id)
   end
 
   buf_keymap('<CR>', 'MiniStarter.eval_current_item()')
-
   buf_keymap('<Up>', [[MiniStarter.update_current_item('prev')]])
-  buf_keymap('<C-k>', [[MiniStarter.update_current_item('prev')]])
+  buf_keymap('k', [[MiniStarter.update_current_item('prev')]])
   buf_keymap('<Down>', [[MiniStarter.update_current_item('next')]])
-  buf_keymap('<C-j>', [[MiniStarter.update_current_item('next')]])
-
-  -- Make all special symbols to update query
-  for _, key in ipairs(vim.split(H.get_config().query_updaters, '')) do
-    local key_string = vim.inspect(tostring(key))
-    buf_keymap(key, ('MiniStarter.add_to_query(%s)'):format(key_string))
-  end
-
-  buf_keymap('<Esc>', [[MiniStarter.set_query('')]])
-  buf_keymap('<BS>', 'MiniStarter.add_to_query()')
+  buf_keymap('j', [[MiniStarter.update_current_item('next')]])
   buf_keymap('<C-c>', 'MiniStarter.close()')
 end
 
