@@ -1387,11 +1387,9 @@ H.apply_buffer_mappings = function(buf_id)
   buf_keymap('<CR>', 'MiniStarter.eval_current_item()')
 
   buf_keymap('<Up>', [[MiniStarter.update_current_item('prev')]])
-  buf_keymap('<C-p>', [[MiniStarter.update_current_item('prev')]])
-  buf_keymap('<M-k>', [[MiniStarter.update_current_item('prev')]])
+  buf_keymap('<C-k>', [[MiniStarter.update_current_item('prev')]])
   buf_keymap('<Down>', [[MiniStarter.update_current_item('next')]])
-  buf_keymap('<C-n>', [[MiniStarter.update_current_item('next')]])
-  buf_keymap('<M-j>', [[MiniStarter.update_current_item('next')]])
+  buf_keymap('<C-j>', [[MiniStarter.update_current_item('next')]])
 
   -- Make all special symbols to update query
   for _, key in ipairs(vim.split(H.get_config().query_updaters, '')) do
