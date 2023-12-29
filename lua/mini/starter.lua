@@ -1,4 +1,4 @@
---- *mini.starter* Start screen
+/--- *mini.starter* Start screen
 --- *MiniStarter*
 ---
 --- MIT License Copyright (c) 2021 Evgeni Chasnovski
@@ -996,7 +996,7 @@ H.default_footer = [[
 Type query to filter items
 <BS> deletes latest character from query
 <Esc> resets current query
-<Down/Up>, <C-n/p>, <M-j/k> move current item
+<Down/Up>, <C-j/k> move current item
 <CR> executes action of current item
 <C-c> closes this buffer]]
 
